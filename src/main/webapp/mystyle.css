@@ -1,0 +1,397 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body#main {
+    display: grid;
+    grid-template-columns: 15vw auto 15vw;
+    grid-template-areas: 
+        'header section aside'
+        'nav section aside'
+        'nav section aside'
+        'nav footer aside';
+    background-color: beige;
+}
+
+body#followerPosts {
+    display: grid;
+    grid-template-columns: 15vw auto 15vw;
+    grid-template-areas: 
+        'header section aside'
+        'nav section aside'
+        'nav section aside'
+        'nav section aside';
+    background-color: beige;
+}
+
+body#create, body#edit, body#register, body#regi_s {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+body#view {
+    background-color: beige;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+header#title {
+    grid-area: header;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fee1e1;
+    width: 15vw;
+    height: auto;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav#left {
+    grid-area: nav;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15vw;
+    background-color: #fee1e1;
+}
+
+#left ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 250px;
+}
+
+#left ul li {
+    background: #fee1e1;
+    line-height: 60px;
+    border-bottom: 1px solid lemonchiffon;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+#left ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#left ul li a:hover {
+    background: hotpink;
+}
+
+#left ul li#active {
+    background: hotpink;
+}
+
+body#followerPosts nav#left {
+    grid-area: nav;
+}
+
+aside#right {
+    grid-area: aside;
+    position: fixed;
+    height: 100vh;
+    width: 15vw;
+    top: 0;
+    right: 0;
+    background-color: #fee1e1;
+}
+
+#login {
+    background-color:white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#login h4 {
+    margin-bottom: 20px;
+}
+
+#posts {
+    grid-area: section;
+    width: 70vw;
+    overflow-y: auto;
+    height: 95vh;
+}
+
+#post {
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid skyblue;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 10px;
+}
+
+#post td {
+    border: 1px solid skyblue;
+    border-left: none;
+    border-right: none;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer {
+    grid-area: footer;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+textarea {
+    width: 50%;
+    height: 300px;
+    resize: none;
+}
+
+textarea#comment {
+    width: 80%;
+    height: 100px;
+    resize: none;
+}
+
+button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: hotpink;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    background-color: deeppink;
+}
+
+.post-container, .comments-container, .comment-form-container {
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container, .register-success-container {
+    width: 70%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.form-container legend {
+    font-size: 1.2em;
+    padding: 0 10px;
+}
+
+.form-container label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="submit"],
+.form-container input[type="reset"],
+.form-container button {
+    padding: 10px;
+    border: none;
+    background-color: hotpink;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-container input[type="submit"]:hover,
+.form-container input[type="reset"]:hover,
+.form-container button:hover {
+    background-color: deeppink;
+}
+
+.btn {
+    background-color: hotpink;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: deeppink;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-btn {
+    margin-top: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+textarea#comment {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.comment-item {
+    margin-bottom: 20px;
+}
+
+body#regi_s {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+body#regi_s h1, body#regi_s h2 {
+    margin-bottom: 20px;
+}
+
+body#regi_s p {
+    margin: 10px 0;
+}
+
+body#regi_s a {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: hotpink;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+body#regi_s a:hover {
+    background-color: deeppink;
+}
+
+@media (max-width: 768px) {
+    body#main {
+        display: grid;
+        grid-template-areas:
+            'header'
+            'aside'
+            'nav'
+            'section'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    body#followerPosts {
+        display: grid;
+        grid-template-areas:
+            'header'
+            'nav'
+            'section';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    header#title, nav#left, aside#right, #posts, footer {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    header#title {
+        text-align: center;
+    }
+
+    nav#left ul {
+        margin-top: 10px;
+    }
+
+    #left ul li {
+        line-height: 40px;
+    }
+
+    #login {
+        margin-top: 20px;
+    }
+}
